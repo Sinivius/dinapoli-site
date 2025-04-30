@@ -1,5 +1,5 @@
 
-import { Instagram } from 'lucide-react';
+import { Instagram, MessageSquare } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -36,7 +36,7 @@ const Footer = () => {
                 className="text-white hover:text-[#25D366] transition-colors"
                 aria-label="WhatsApp"
               >
-                <WhatsApp />
+                <MessageSquare />
               </a>
             </div>
           </div>

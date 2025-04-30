@@ -11,7 +11,6 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import WhatsappButton from '@/components/WhatsappButton';
 import { useToast } from '@/hooks/use-toast';
-import { WhatsApp } from 'lucide-react';
 
 const Index = () => {
   const { toast } = useToast();
