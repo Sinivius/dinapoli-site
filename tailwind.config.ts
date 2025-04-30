@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,12 +62,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				dinapoli: {
+					red: '#FF2C2C',
+					green: '#008C45',
+					white: '#F4F5F0',
+					yellow: '#FFD700',
+					black: '#000000'
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'pizza-pattern': "url('/public/lovable-uploads/fa1111b9-d9ee-4aa8-a830-782d732a3cf6.png')"
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +95,24 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 5s ease-in-out infinite'
+			},
+			fontFamily: {
+				'sans': ['Poppins', 'sans-serif'],
+				'display': ['Playfair Display', 'serif']
 			}
 		}
 	},
