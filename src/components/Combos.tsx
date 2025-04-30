@@ -1,8 +1,14 @@
 
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useCart } from '@/contexts/CartContext';
+import { useToast } from '@/hooks/use-toast';
+import { Plus } from 'lucide-react';
 
 const Combos = () => {
+  const { addToCart } = useCart();
+  const { toast } = useToast();
+  
   const combos = [
     {
       id: 1,
@@ -33,6 +39,23 @@ const Combos = () => {
       bgColor: 'bg-gradient-to-br from-dinapoli-green to-dinapoli-green/70'
     }
   ];
+
+  const handleAddComboToCart = (combo: typeof combos[0]) => {
+    // Convert price from string to number
+    const priceAsNumber = parseFloat(combo.price);
+    
+    addToCart({
+      name: `Combo ${combo.title} (${combo.description} ${combo.extras})`,
+      price: priceAsNumber,
+      category: 'salty',  // Combos are primarily salty items
+    });
+    
+    toast({
+      title: "Combo adicionado",
+      description: `Combo ${combo.title} adicionado ao carrinho`,
+      duration: 2000,
+    });
+  };
 
   return (
     <section id="combos" className="section-padding relative">
@@ -73,21 +96,31 @@ const Combos = () => {
                     <span className="text-xs opacity-90">{combo.savings}</span>
                   </div>
                   
-                  <a 
-                    href={`https://wa.me/13996365529?text=Olá! Gostaria de pedir o Combo ${combo.title} por R$ ${combo.price}`} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
+                  <div className="flex space-x-2">
                     <Button 
-                      className={`w-full ${
+                      className={`flex-1 ${
                         combo.featured 
                           ? 'bg-dinapoli-yellow hover:bg-dinapoli-yellow/90 text-black' 
                           : 'bg-white/90 hover:bg-white text-black'
                       }`}
+                      onClick={() => handleAddComboToCart(combo)}
+                    >
+                      <Plus className="mr-1 h-4 w-4" /> Adicionar
+                    </Button>
+                    
+                    <a 
+                      href={`https://wa.me/13996365529?text=Olá! Gostaria de pedir o Combo ${combo.title} por R$ ${combo.price}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className={`flex-1 inline-flex justify-center items-center px-4 py-2 rounded-md text-sm font-medium ${
+                        combo.featured 
+                          ? 'bg-black hover:bg-black/80 text-dinapoli-yellow' 
+                          : 'bg-black/30 hover:bg-black/40 text-white'
+                      }`}
                     >
                       Pedir agora
-                    </Button>
-                  </a>
+                    </a>
+                  </div>
                 </div>
               </Card>
             </div>

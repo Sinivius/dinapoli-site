@@ -1,7 +1,11 @@
 
 import { useState } from 'react';
+import { Plus } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Button } from '@/components/ui/button';
+import { useCart } from '@/contexts/CartContext';
+import { useToast } from '@/hooks/use-toast';
 
 type MenuItem = {
   name: string;
@@ -11,6 +15,8 @@ type MenuItem = {
 
 const Menu = () => {
   const [activeTab, setActiveTab] = useState('salty');
+  const { addToCart } = useCart();
+  const { toast } = useToast();
   
   const saltyItems: MenuItem[] = [
     { name: 'CARNE', price: '3,00' },
@@ -62,6 +68,23 @@ const Menu = () => {
     { name: 'COCA-COLA 2L', price: '14,00' },
   ];
 
+  const handleAddToCart = (item: MenuItem, category: 'salty' | 'sweet' | 'drink') => {
+    // Convert price from string (e.g. "3,00") to number (e.g. 3.00)
+    const priceAsNumber = parseFloat(item.price.replace(',', '.'));
+    
+    addToCart({
+      name: item.name,
+      price: priceAsNumber,
+      category,
+    });
+    
+    toast({
+      title: "Item adicionado",
+      description: `${item.name} adicionado ao carrinho`,
+      duration: 2000,
+    });
+  };
+
   return (
     <section id="cardapio" className="section-padding relative">
       <div className="absolute inset-0 bg-pattern opacity-10"></div>
@@ -103,10 +126,22 @@ const Menu = () => {
                 {saltyItems.map((item, index) => (
                   <div 
                     key={index}
-                    className="flex justify-between items-center p-3 border-b border-gray-800 relative"
+                    className="flex justify-between items-center p-3 border-b border-gray-800 relative group"
                   >
-                    <span className="font-medium">{item.name}</span>
-                    <span className="text-dinapoli-yellow font-bold">R$ {item.price}</span>
+                    <div className="flex-1">
+                      <span className="font-medium">{item.name}</span>
+                      <span className="block md:hidden text-dinapoli-yellow font-bold">R$ {item.price}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="hidden md:inline-block text-dinapoli-yellow font-bold mr-4">R$ {item.price}</span>
+                      <Button
+                        size="icon"
+                        className="bg-dinapoli-red hover:bg-dinapoli-red/80 text-white"
+                        onClick={() => handleAddToCart(item, 'salty')}
+                      >
+                        <Plus className="h-4 w-4" />
+                      </Button>
+                    </div>
                     {item.isPopular && (
                       <span className="badge-popular">Mais pedido</span>
                     )}
@@ -122,10 +157,22 @@ const Menu = () => {
                 {sweetItems.map((item, index) => (
                   <div 
                     key={index}
-                    className="flex justify-between items-center p-3 border-b border-gray-800 relative"
+                    className="flex justify-between items-center p-3 border-b border-gray-800 relative group"
                   >
-                    <span className="font-medium">{item.name}</span>
-                    <span className="text-dinapoli-yellow font-bold">R$ {item.price}</span>
+                    <div className="flex-1">
+                      <span className="font-medium">{item.name}</span>
+                      <span className="block md:hidden text-dinapoli-yellow font-bold">R$ {item.price}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="hidden md:inline-block text-dinapoli-yellow font-bold mr-4">R$ {item.price}</span>
+                      <Button
+                        size="icon"
+                        className="bg-dinapoli-yellow hover:bg-dinapoli-yellow/80 text-black"
+                        onClick={() => handleAddToCart(item, 'sweet')}
+                      >
+                        <Plus className="h-4 w-4" />
+                      </Button>
+                    </div>
                     {item.isPopular && (
                       <span className="badge-popular">Mais pedido</span>
                     )}
@@ -141,10 +188,22 @@ const Menu = () => {
                 {drinks.map((item, index) => (
                   <div 
                     key={index}
-                    className="flex justify-between items-center p-3 border-b border-gray-800 relative"
+                    className="flex justify-between items-center p-3 border-b border-gray-800 relative group"
                   >
-                    <span className="font-medium">{item.name}</span>
-                    <span className="text-dinapoli-yellow font-bold">R$ {item.price}</span>
+                    <div className="flex-1">
+                      <span className="font-medium">{item.name}</span>
+                      <span className="block md:hidden text-dinapoli-yellow font-bold">R$ {item.price}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="hidden md:inline-block text-dinapoli-yellow font-bold mr-4">R$ {item.price}</span>
+                      <Button
+                        size="icon"
+                        className="bg-dinapoli-green hover:bg-dinapoli-green/80 text-white"
+                        onClick={() => handleAddToCart(item, 'drink')}
+                      >
+                        <Plus className="h-4 w-4" />
+                      </Button>
+                    </div>
                     {item.isPopular && (
                       <span className="badge-popular">Mais pedido</span>
                     )}

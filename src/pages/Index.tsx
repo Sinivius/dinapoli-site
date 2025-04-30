@@ -10,7 +10,9 @@ import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import WhatsappButton from '@/components/WhatsappButton';
+import Cart from '@/components/Cart';
 import { useToast } from '@/hooks/use-toast';
+import { CartProvider } from '@/contexts/CartContext';
 
 const Index = () => {
   const { toast } = useToast();
@@ -46,18 +48,21 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black">
-      <Navbar />
-      <Hero />
-      <About />
-      <Menu />
-      <Combos />
-      <Promotions />
-      <Testimonials />
-      <Contact />
-      <Footer />
-      <WhatsappButton />
-    </div>
+    <CartProvider>
+      <div className="min-h-screen bg-black">
+        <Navbar />
+        <Hero />
+        <About />
+        <Menu />
+        <Combos />
+        <Promotions />
+        <Testimonials />
+        <Contact />
+        <Footer />
+        <WhatsappButton />
+        <Cart />
+      </div>
+    </CartProvider>
   );
 };
 
