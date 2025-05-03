@@ -1,4 +1,3 @@
-
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
@@ -54,7 +53,7 @@ const Combos = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-display">Combos</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-display">Combos</h2>
           <div className="mx-auto w-24 h-1 bg-gradient-to-r from-dinapoli-green via-dinapoli-white to-dinapoli-red mb-6"></div>
         </div>
         
@@ -69,11 +68,11 @@ const Combos = () => {
                 )}
                 
                 <div className="p-6 text-center">
-                  <h3 className="text-2xl font-bold mb-6">{combo.title}</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6">{combo.title}</h3>
                   
                   <div className="mb-6">
                     <div className="flex items-center justify-center">
-                      <span className="text-4xl font-bold">R$ {combo.price}</span>
+                      <span className="text-4xl md:text-5xl font-bold">R$ {combo.price}</span>
                       <span className="text-sm self-start ml-1">,00</span>
                     </div>
                   </div>
@@ -83,7 +82,7 @@ const Combos = () => {
                       combo.featured 
                         ? 'bg-dinapoli-yellow hover:bg-dinapoli-yellow/90 text-black' 
                         : 'bg-white/90 hover:bg-white text-black'
-                    }`}
+                    } text-lg py-6`}
                     onClick={() => handleAddComboToCart(combo)}
                   >
                     <Plus className="mr-1 h-4 w-4" /> Adicionar ao Carrinho

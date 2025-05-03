@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Plus } from 'lucide-react';
 import { Card } from '@/components/ui/card';
@@ -91,30 +90,27 @@ const Menu = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">Cardápio</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-display">Cardápio</h2>
           <div className="mx-auto w-24 h-1 bg-gradient-to-r from-dinapoli-green via-dinapoli-white to-dinapoli-red mb-6"></div>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Conheça nosso delicioso cardápio de esfihas salgadas, doces e bebidas. Todos os produtos são feitos com ingredientes selecionados e muito amor.
-          </p>
         </div>
         
         <Tabs defaultValue="salty" className="w-full max-w-4xl mx-auto">
           <TabsList className="grid grid-cols-3 mb-8">
             <TabsTrigger 
               value="salty"
-              className="data-[state=active]:bg-dinapoli-red data-[state=active]:text-white"
+              className="data-[state=active]:bg-dinapoli-red data-[state=active]:text-white text-base md:text-lg"
             >
               Esfihas Salgadas
             </TabsTrigger>
             <TabsTrigger 
               value="sweet"
-              className="data-[state=active]:bg-dinapoli-yellow data-[state=active]:text-black"
+              className="data-[state=active]:bg-dinapoli-yellow data-[state=active]:text-black text-base md:text-lg"
             >
               Esfihas Doces
             </TabsTrigger>
             <TabsTrigger 
               value="drinks"
-              className="data-[state=active]:bg-dinapoli-green data-[state=active]:text-white"
+              className="data-[state=active]:bg-dinapoli-green data-[state=active]:text-white text-base md:text-lg"
             >
               Bebidas
             </TabsTrigger>

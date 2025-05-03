@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -60,7 +59,7 @@ Aguardo a confirmação! 🙏`;
   
   return (
     <div className="bg-black/80 p-6 rounded-lg shadow-lg max-w-2xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-6 text-white font-display">Complete seu pedido</h2>
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-white font-display">Complete seu pedido</h2>
       
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>

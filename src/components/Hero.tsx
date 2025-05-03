@@ -18,24 +18,21 @@ const Hero = () => {
               <div className="w-10 h-1 bg-dinapoli-white mx-1"></div>
               <div className="w-10 h-1 bg-dinapoli-red"></div>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
               <span className="text-white">Di</span>
               <span className="text-dinapoli-red">Napoli</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-medium mb-6">
+            <h2 className="text-3xl md:text-4xl font-medium mb-6">
               <span className="highlight-text">Esfiharia e Pizzaria</span>
             </h2>
-            <p className="text-lg text-gray-300 mb-8">
-              Sabores autênticos da culinária italiana e árabe, com receitas artesanais e ingredientes selecionados para proporcionar uma experiência gastronômica única.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#cardapio">
-                <Button className="bg-dinapoli-red hover:bg-dinapoli-red/80 text-white px-8 py-6 text-lg">
+                <Button className="bg-dinapoli-red hover:bg-dinapoli-red/80 text-white px-8 py-6 text-xl">
                   Ver Cardápio
                 </Button>
               </a>
               <a href="https://wa.me/13996365529" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="border-dinapoli-yellow text-dinapoli-yellow hover:bg-dinapoli-yellow hover:text-black px-8 py-6 text-lg">
+                <Button variant="outline" className="border-dinapoli-yellow text-dinapoli-yellow hover:bg-dinapoli-yellow hover:text-black px-8 py-6 text-xl">
                   Peça Agora
                 </Button>
               </a>
