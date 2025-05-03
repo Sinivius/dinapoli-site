@@ -65,12 +65,6 @@ const Navbar = () => {
             <a href="#combos" onClick={(e) => handleLinkClick(e, 'combos')} className={`menu-item ${activeSection === 'combos' ? 'active' : ''}`}>
               Combos
             </a>
-            <a href="#promocoes" onClick={(e) => handleLinkClick(e, 'promocoes')} className={`menu-item ${activeSection === 'promocoes' ? 'active' : ''}`}>
-              Promoções
-            </a>
-            <a href="#avaliacoes" onClick={(e) => handleLinkClick(e, 'avaliacoes')} className={`menu-item ${activeSection === 'avaliacoes' ? 'active' : ''}`}>
-              Avaliações
-            </a>
             <a href="#contato" onClick={(e) => handleLinkClick(e, 'contato')} className={`menu-item ${activeSection === 'contato' ? 'active' : ''}`}>
               Contato
             </a>
@@ -100,12 +94,6 @@ const Navbar = () => {
               </a>
               <a href="#combos" onClick={(e) => handleLinkClick(e, 'combos')} className={`menu-item px-4 py-2 ${activeSection === 'combos' ? 'active' : ''}`}>
                 Combos
-              </a>
-              <a href="#promocoes" onClick={(e) => handleLinkClick(e, 'promocoes')} className={`menu-item px-4 py-2 ${activeSection === 'promocoes' ? 'active' : ''}`}>
-                Promoções
-              </a>
-              <a href="#avaliacoes" onClick={(e) => handleLinkClick(e, 'avaliacoes')} className={`menu-item px-4 py-2 ${activeSection === 'avaliacoes' ? 'active' : ''}`}>
-                Avaliações
               </a>
               <a href="#contato" onClick={(e) => handleLinkClick(e, 'contato')} className={`menu-item px-4 py-2 ${activeSection === 'contato' ? 'active' : ''}`}>
                 Contato

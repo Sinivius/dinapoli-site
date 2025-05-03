@@ -2,11 +2,8 @@
 import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
 import Menu from '@/components/Menu';
 import Combos from '@/components/Combos';
-import Promotions from '@/components/Promotions';
-import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import WhatsappButton from '@/components/WhatsappButton';
@@ -24,8 +21,8 @@ const Index = () => {
       setIsLoading(false);
       toast({
         title: "Bem-vindo à Dinapoli!",
-        description: "Esfihas feitas com muito sabor e tradição.",
-        duration: 5000,
+        description: "Peça suas esfihas favoritas.",
+        duration: 3000,
       });
     }, 1000);
   }, [toast]);
@@ -52,11 +49,8 @@ const Index = () => {
       <div className="min-h-screen bg-black">
         <Navbar />
         <Hero />
-        <About />
         <Menu />
         <Combos />
-        <Promotions />
-        <Testimonials />
         <Contact />
         <Footer />
         <WhatsappButton />

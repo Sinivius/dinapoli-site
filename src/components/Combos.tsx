@@ -12,30 +12,21 @@ const Combos = () => {
   const combos = [
     {
       id: 1,
-      title: '15 Esfihas',
-      description: 'Carne, Queijo, Calabresa',
-      extras: '+ Refrigerante',
+      title: '15 Esfihas + Refrigerante',
       price: '45',
-      savings: 'Economia de R$ 10',
       bgColor: 'bg-gradient-to-br from-dinapoli-red to-dinapoli-red/70'
     },
     {
       id: 2,
-      title: '20 Esfihas',
-      description: 'Carne, Queijo, Calabresa, Catupiry',
-      extras: '+ Refrigerante',
+      title: '20 Esfihas + Refrigerante',
       price: '60',
-      savings: 'Economia de R$ 15',
       bgColor: 'bg-gradient-to-br from-dinapoli-yellow to-dinapoli-yellow/70',
       featured: true
     },
     {
       id: 3,
-      title: '30 Esfihas',
-      description: 'Carne, Queijo, Calabresa',
-      extras: '+ Refrigerante',
+      title: '30 Esfihas + Refrigerante',
       price: '90',
-      savings: 'Economia de R$ 20',
       bgColor: 'bg-gradient-to-br from-dinapoli-green to-dinapoli-green/70'
     }
   ];
@@ -45,7 +36,7 @@ const Combos = () => {
     const priceAsNumber = parseFloat(combo.price);
     
     addToCart({
-      name: `Combo ${combo.title} (${combo.description} ${combo.extras})`,
+      name: `Combo ${combo.title}`,
       price: priceAsNumber,
       category: 'salty',  // Combos are primarily salty items
     });
@@ -63,11 +54,8 @@ const Combos = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">Combos</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-display">Combos</h2>
           <div className="mx-auto w-24 h-1 bg-gradient-to-r from-dinapoli-green via-dinapoli-white to-dinapoli-red mb-6"></div>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Aproveite nossos combos especiais e economize. Ideal para reunir amigos e família.
-          </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -81,46 +69,25 @@ const Combos = () => {
                 )}
                 
                 <div className="p-6 text-center">
-                  <h3 className="text-2xl font-bold mb-2">Combo {combo.title}</h3>
-                  <div className="text-sm mb-4 opacity-90">
-                    <p>{combo.description}</p>
-                    <p>{combo.extras}</p>
-                  </div>
+                  <h3 className="text-2xl font-bold mb-6">{combo.title}</h3>
                   
                   <div className="mb-6">
-                    <span className="text-sm">Por apenas</span>
                     <div className="flex items-center justify-center">
-                      <span className="text-3xl font-bold">R$ {combo.price}</span>
+                      <span className="text-4xl font-bold">R$ {combo.price}</span>
                       <span className="text-sm self-start ml-1">,00</span>
                     </div>
-                    <span className="text-xs opacity-90">{combo.savings}</span>
                   </div>
                   
-                  <div className="flex space-x-2">
-                    <Button 
-                      className={`flex-1 ${
-                        combo.featured 
-                          ? 'bg-dinapoli-yellow hover:bg-dinapoli-yellow/90 text-black' 
-                          : 'bg-white/90 hover:bg-white text-black'
-                      }`}
-                      onClick={() => handleAddComboToCart(combo)}
-                    >
-                      <Plus className="mr-1 h-4 w-4" /> Adicionar
-                    </Button>
-                    
-                    <a 
-                      href={`https://wa.me/13996365529?text=Olá! Gostaria de pedir o Combo ${combo.title} por R$ ${combo.price}`} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className={`flex-1 inline-flex justify-center items-center px-4 py-2 rounded-md text-sm font-medium ${
-                        combo.featured 
-                          ? 'bg-black hover:bg-black/80 text-dinapoli-yellow' 
-                          : 'bg-black/30 hover:bg-black/40 text-white'
-                      }`}
-                    >
-                      Pedir agora
-                    </a>
-                  </div>
+                  <Button 
+                    className={`w-full ${
+                      combo.featured 
+                        ? 'bg-dinapoli-yellow hover:bg-dinapoli-yellow/90 text-black' 
+                        : 'bg-white/90 hover:bg-white text-black'
+                    }`}
+                    onClick={() => handleAddComboToCart(combo)}
+                  >
+                    <Plus className="mr-1 h-4 w-4" /> Adicionar ao Carrinho
+                  </Button>
                 </div>
               </Card>
             </div>
