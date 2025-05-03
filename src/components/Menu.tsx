@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Plus } from 'lucide-react';
 import { Card } from '@/components/ui/card';
@@ -82,6 +83,13 @@ const Menu = () => {
       description: `${item.name} adicionado ao carrinho`,
       duration: 2000,
     });
+  };
+
+  const handleScrollToOrder = () => {
+    const orderSection = document.getElementById('order');
+    if (orderSection) {
+      orderSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -209,6 +217,15 @@ const Menu = () => {
             </Card>
           </TabsContent>
         </Tabs>
+
+        <div className="flex justify-center mt-10">
+          <Button 
+            onClick={handleScrollToOrder} 
+            className="bg-dinapoli-red hover:bg-dinapoli-red/90 text-white px-8 py-6 text-xl"
+          >
+            Finalizar Pedido
+          </Button>
+        </div>
       </div>
     </section>
   );

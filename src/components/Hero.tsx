@@ -31,7 +31,7 @@ const Hero = () => {
                   Ver Cardápio
                 </Button>
               </a>
-              <a href="https://wa.me/13996365529" target="_blank" rel="noopener noreferrer">
+              <a href="#cardapio">
                 <Button variant="outline" className="border-dinapoli-yellow text-dinapoli-yellow hover:bg-dinapoli-yellow hover:text-black px-8 py-6 text-xl">
                   Peça Agora
                 </Button>

@@ -58,7 +58,15 @@ const Cart = () => {
       });
       return;
     }
-    setCurrentStep('checkout');
+    
+    // Close the drawer
+    setIsOpen(false);
+    
+    // Scroll to order section
+    const orderSection = document.getElementById('order');
+    if (orderSection) {
+      orderSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const handleBackToCart = () => {
