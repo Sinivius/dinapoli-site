@@ -98,7 +98,7 @@ const Menu = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-display">Cardápio</h2>
+          <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-4 font-display">Cardápio</h2>
           <div className="mx-auto w-24 h-1 bg-gradient-to-r from-dinapoli-green via-dinapoli-white to-dinapoli-red mb-6"></div>
         </div>
         
