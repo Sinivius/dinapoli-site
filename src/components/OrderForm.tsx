@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -14,7 +15,6 @@ const OrderForm = () => {
   const [reference, setReference] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
   const [change, setChange] = useState('');
-  const [deliveryTime, setDeliveryTime] = useState('');
 
   const formatMessage = () => {
     // Format cart items
@@ -43,7 +43,6 @@ Nome: ${name}
 Telefone: ${phone}  
 Endereço: ${address}  
 ${complement ? `Complemento: ${complement}  \n` : ''}${reference ? `Referência: ${reference}  \n` : ''}
-🕐 ${deliveryTime ? `Horário desejado para entrega: ${deliveryTime}  \n` : ''}
 💳 Pagamento na entrega: ${paymentMethod} ${changeInfo}
 
 Aguardo a confirmação! 🙏`;
@@ -121,32 +120,20 @@ Aguardo a confirmação! 🙏`;
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="deliveryTime" className="block text-white mb-1">Horário de entrega:</label>
-            <Input 
-              id="deliveryTime" 
-              placeholder="Ex: 20:00" 
-              className="bg-black/50 text-white border-dinapoli-green"
-              value={deliveryTime}
-              onChange={(e) => setDeliveryTime(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="payment" className="block text-white mb-1">Forma de pagamento:</label>
-            <select 
-              id="payment"
-              className="flex h-10 w-full rounded-md border bg-black/50 text-white border-dinapoli-green px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
-              value={paymentMethod}
-              onChange={(e) => setPaymentMethod(e.target.value)}
-              required
-            >
-              <option value="">Selecione</option>
-              <option value="Dinheiro">Dinheiro</option>
-              <option value="PIX">PIX</option>
-              <option value="Cartão">Cartão</option>
-            </select>
-          </div>
+        <div>
+          <label htmlFor="payment" className="block text-white mb-1">Forma de pagamento:</label>
+          <select 
+            id="payment"
+            className="flex h-10 w-full rounded-md border bg-black/50 text-white border-dinapoli-green px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+            value={paymentMethod}
+            onChange={(e) => setPaymentMethod(e.target.value)}
+            required
+          >
+            <option value="">Selecione</option>
+            <option value="Dinheiro">Dinheiro</option>
+            <option value="PIX">PIX</option>
+            <option value="Cartão">Cartão</option>
+          </select>
         </div>
         
         {paymentMethod === 'Dinheiro' && (
