@@ -108,7 +108,7 @@ const Menu = () => {
               value="salty"
               className="data-[state=active]:bg-dinapoli-red data-[state=active]:text-white text-base md:text-lg"
             >
-              Esfihas Salgadas
+              Esfihas
             </TabsTrigger>
             <TabsTrigger 
               value="sweet"
