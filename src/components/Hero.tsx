@@ -12,7 +12,8 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center">
-          <div className="w-full lg:w-1/2 mb-10 lg:mb-0">
+          {/* Content Column - Center aligned on mobile */}
+          <div className="w-full lg:w-1/2 mb-10 lg:mb-0 flex flex-col items-center lg:items-start text-center lg:text-left">
             <div className="flex items-center mb-4">
               <div className="w-10 h-1 bg-dinapoli-green"></div>
               <div className="w-10 h-1 bg-dinapoli-white mx-1"></div>
@@ -39,6 +40,7 @@ const Hero = () => {
             </div>
           </div>
           
+          {/* Logo Column */}
           <div className="w-full lg:w-1/2 flex justify-center">
             <div className="relative">
               {/* Logo circle with italian flag gradient border */}
