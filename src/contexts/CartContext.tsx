@@ -6,7 +6,7 @@ export type CartItem = {
   name: string;
   price: number;
   quantity: number;
-  category: 'salty' | 'sweet' | 'drink';
+  category: 'salty' | 'sweet' | 'pizza' | 'drink';
 };
 
 type CartContextType = {
