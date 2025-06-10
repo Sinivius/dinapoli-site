@@ -13,7 +13,7 @@ const Combos = () => {
     {
       id: 1,
       title: '15 Esfihas + Refrigerante',
-      price: '45',
+      price: '47',
       bgColor: 'bg-gradient-to-br from-dinapoli-red to-dinapoli-red/70'
     },
     {
