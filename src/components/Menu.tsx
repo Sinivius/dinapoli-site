@@ -180,7 +180,8 @@ const Menu = () => {
               value="sweet"
               className="data-[state=active]:bg-dinapoli-yellow data-[state=active]:text-black text-base md:text-lg"
             >
-              Esfihas Doces
+              <span className="hidden md:inline">Esfihas Doces</span>
+              <span className="md:hidden">Doces</span>
             </TabsTrigger>
             <TabsTrigger 
               value="pizzas"
