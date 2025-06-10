@@ -11,7 +11,6 @@ import { CartSummary } from './cart/CartSummary';
 import { CartActions } from './cart/CartActions';
 import { CheckoutForm } from './cart/CheckoutForm';
 
-const DELIVERY_FEE = 5.00; // Taxa fixa de entrega, poderia ser calculada por bairro
 const PAYMENT_METHODS = ['Dinheiro', 'PIX', 'Cartão de Crédito', 'Cartão de Débito'];
 
 const Cart = () => {
@@ -22,7 +21,6 @@ const Cart = () => {
   
   const totalItems = getTotalItems();
   const subtotal = getTotalPrice();
-  const totalWithDelivery = subtotal + DELIVERY_FEE;
 
   const handleProceedToCheckout = () => {
     if (items.length === 0) {
@@ -75,9 +73,8 @@ const Cart = () => {
       message += `- ${item.quantity}x ${item.name}: R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}\n`;
     });
     
-    // Add delivery and total
-    message += `\n🚚 *Taxa de Entrega:* R$ ${DELIVERY_FEE.toFixed(2).replace('.', ',')}\n`;
-    message += `📦 *Total (com entrega):* R$ ${totalWithDelivery.toFixed(2).replace('.', ',')}\n\n`;
+    // Add total (without delivery fee)
+    message += `\n📦 *Total:* R$ ${subtotal.toFixed(2).replace('.', ',')}\n\n`;
     
     // Add customer data
     message += "👤 *Dados para entrega:*\n";
@@ -93,7 +90,7 @@ const Cart = () => {
       message += ` (troco para R$ ${data.changeFor})`;
     }
     
-    message += "\n\nAguardo a confirmação! 🙏";
+    message += "\n\nAguardo a confirmação e o cálculo da taxa de entrega! 🙏";
     
     // Encode message for WhatsApp URL
     const encodedMessage = encodeURIComponent(message);
@@ -147,8 +144,6 @@ const Cart = () => {
             {items.length > 0 && (
               <CartSummary 
                 subtotal={subtotal}
-                deliveryFee={DELIVERY_FEE}
-                totalWithDelivery={totalWithDelivery}
               />
             )}
             
@@ -163,7 +158,7 @@ const Cart = () => {
           <CheckoutForm 
             onSubmit={handleSendOrder}
             onBackToCart={handleBackToCart}
-            totalWithDelivery={totalWithDelivery}
+            totalWithDelivery={subtotal}
             paymentMethods={PAYMENT_METHODS}
           />
         )}
