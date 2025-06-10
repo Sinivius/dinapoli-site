@@ -32,9 +32,9 @@ const Hero = () => {
                   Ver Cardápio
                 </Button>
               </a>
-              <a href="#cardapio">
+              <a href="#combos">
                 <Button variant="outline" className="border-dinapoli-yellow text-dinapoli-yellow hover:bg-dinapoli-yellow hover:text-black px-8 py-6 text-xl">
-                  Peça Agora
+                  Combos
                 </Button>
               </a>
             </div>
