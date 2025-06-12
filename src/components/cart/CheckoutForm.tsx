@@ -170,7 +170,7 @@ export const CheckoutForm = ({
           
           <div className="border-t border-gray-800 pt-4 mt-6">
             <div className="flex justify-between items-center font-bold text-lg mb-4">
-              <span>Total com entrega</span>
+              <span>Total sem Taxa de Entrega</span>
               <span className="text-dinapoli-yellow">R$ {totalWithDelivery.toFixed(2).replace('.', ',')}</span>
             </div>
           </div>
