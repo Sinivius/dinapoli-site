@@ -10,7 +10,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-display">Entre em Contato</h2>
           <div className="mx-auto w-24 h-1 bg-gradient-to-r from-dinapoli-green via-dinapoli-white to-dinapoli-red mb-6"></div>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Estamos à disposição para atender você. Entre em contato conosco ou visite nossa loja física.
+            Estamos à disposição para atender você. Entre em contato conosco ou nos faça uma visita.
           </p>
         </div>
         
