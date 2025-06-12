@@ -68,23 +68,23 @@ const Menu = () => {
 
   const pizzas: MenuItem[] = [
     { name: 'CALABRESA', price: '35,00', description: 'Calabresa acebolada' },
-    { name: 'DOIS QUEIJOS', price: '40,00', description: 'Mussarela e requeijão' },
     { name: 'CALACATU', price: '36,00', description: 'Calabresa e requeijão' },
     { name: 'NAPOLITANA', price: '36,00', description: 'Mussarela, tomate e parmesão' },
     { name: 'MUSSARELA', price: '38,00', description: 'Mussarela e tomate' },
     { name: 'BAIANA', price: '38,00', description: 'Calabresa ralada, pimenta calabresa, cebola e ovo' },
-    { name: 'CALAMUSSA', price: '40,00', description: 'Calabresa e mussarela' },
-    { name: 'BAURU', price: '40,00', description: 'Mussarela, presunto e tomate' },
-    { name: 'FRANGO C/ CATUPIRY', price: '40,00', description: 'Frango e requeijão', isPopular: true },
-    { name: 'BACON', price: '40,00', description: 'Bacon e mussarela' },
     { name: 'ALHO', price: '40,00', description: 'Mussarela e alho' },
     { name: 'ATUM', price: '40,00', description: 'Atum, cebola e molho de tomate' },
+    { name: 'BACON', price: '40,00', description: 'Bacon e mussarela' },
+    { name: 'BAURU', price: '40,00', description: 'Mussarela, presunto e tomate' },
+    { name: 'DOIS QUEIJOS', price: '40,00', description: 'Mussarela e requeijão' },
+    { name: 'CALAMUSSA', price: '40,00', description: 'Calabresa e mussarela' },
+    { name: 'FRANGO C/ CATUPIRY', price: '40,00', description: 'Frango e requeijão', isPopular: true },
     { name: 'MILHO', price: '40,00', description: 'Milho com mussarela' },
-    { name: 'QUATRO QUEIJOS', price: '45,00', description: 'Mussarela, requeijão, parmesão e provolone' },
     { name: 'TOSCANA', price: '42,00', description: 'Calabresa moída com mussarela' },
     { name: 'BAIANA C/ MUSSARELA', price: '42,00', description: 'Calabresa ralada, pimenta calabresa, cebola e mussarela' },
     { name: 'FRANGO C/ MUSSARELA', price: '42,00', description: 'Frango e mussarela' },
     { name: 'PORTUGUESA', price: '45,00', description: 'Presunto, ovos, ervilha, cebola, palmito e mussarela', isPopular: true },
+    { name: 'QUATRO QUEIJOS', price: '45,00', description: 'Mussarela, requeijão, parmesão e provolone' },
     { name: 'PALMITO', price: '45,00', description: 'Mussarela e palmito' },
     { name: 'MILHO C/ CATUPIRY', price: '45,00', description: 'Milho, mussarela e requeijão' },
     { name: 'PERUANA', price: '45,00', description: 'Atum e mussarela' },
@@ -275,7 +275,7 @@ const Menu = () => {
             onClick={handleScrollToOrder} 
             className="bg-dinapoli-red hover:bg-dinapoli-red/90 text-white px-8 py-6 text-xl"
           >
-            Finalizar Pedido e Calcular Taxa de Entrega
+            Finalizar Pedido
           </Button>
         </div>
       </div>
