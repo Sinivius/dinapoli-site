@@ -15,7 +15,7 @@ export const CartActions = ({ onProceedToCheckout, isCartEmpty }: CartActionsPro
         onClick={onProceedToCheckout}
         disabled={isCartEmpty}
       >
-        Calcular Taxa de Entrega via Whatsapp
+        Finalizar Pedido e Calcular Entrega
       </Button>
       
       <DrawerClose asChild>
