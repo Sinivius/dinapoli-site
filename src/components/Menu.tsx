@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Plus } from 'lucide-react';
 import { Card } from '@/components/ui/card';
@@ -219,7 +218,7 @@ const Menu = () => {
               
               <div>
                 <h3 className="text-xl font-bold mb-4 text-dinapoli-green">Pizza Meio a Meio</h3>
-                <PizzaSelector pizzas={pizzas} onAddToCart={addToCart} />
+                <PizzaSelector />
               </div>
             </Card>
           </TabsContent>

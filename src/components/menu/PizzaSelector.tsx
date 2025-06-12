@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
@@ -48,9 +49,9 @@ export const PizzaSelector = () => {
   const handleAddToCart = () => {
     if (selectedPizza) {
       addToCart({
-        ...selectedPizza,
-        quantity: 1,
-        category: 'salty'
+        name: selectedPizza.name,
+        price: selectedPizza.price,
+        category: 'pizza'
       });
       toast({
         title: "Pizza adicionada",
@@ -61,8 +62,7 @@ export const PizzaSelector = () => {
       addToCart({
         name: `${halfPizza1.name} / ${halfPizza2.name} (Meia)`,
         price: halfPizzaPrice,
-        quantity: 1,
-        category: 'salty'
+        category: 'pizza'
       });
       toast({
         title: "Pizza adicionada",
