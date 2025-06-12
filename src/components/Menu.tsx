@@ -253,6 +253,8 @@ const Menu = () => {
                       variant="outline"
                       onClick={() => setPizzaType(null)}
                       className="border-gray-700 text-gray-300 hover:bg-gray-900 hover:text-white"
+                    >
+                      Voltar
                     </Button>
                   </div>
                   <PizzaSelector />
