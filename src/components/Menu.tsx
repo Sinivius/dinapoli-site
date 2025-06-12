@@ -16,6 +16,7 @@ type MenuItem = {
 
 const Menu = () => {
   const [activeTab, setActiveTab] = useState('salty');
+  const [pizzaType, setPizzaType] = useState<'whole' | 'half' | null>(null);
   const { addToCart } = useCart();
   const { toast } = useToast();
   
@@ -186,6 +187,7 @@ const Menu = () => {
             <TabsTrigger 
               value="pizzas"
               className="data-[state=active]:bg-dinapoli-green data-[state=active]:text-white text-base md:text-lg"
+              onClick={() => setPizzaType(null)}
             >
               Pizzas
             </TabsTrigger>
@@ -211,15 +213,51 @@ const Menu = () => {
 
           <TabsContent value="pizzas" className="mt-0">
             <Card className="bg-black/60 border-gray-800 p-6 space-y-8">
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-dinapoli-green">Pizza Inteira</h3>
-                {renderMenuItems(pizzas, 'pizza', 'bg-dinapoli-green hover:bg-dinapoli-green/80')}
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-dinapoli-green">Pizza Meio a Meio</h3>
-                <PizzaSelector />
-              </div>
+              {!pizzaType ? (
+                <div className="text-center space-y-6">
+                  <h3 className="text-2xl font-bold text-dinapoli-green mb-6">Escolha o tipo de pizza</h3>
+                  <div className="flex flex-col md:flex-row gap-4 justify-center">
+                    <Button
+                      onClick={() => setPizzaType('whole')}
+                      className="bg-dinapoli-green hover:bg-dinapoli-green/90 text-white px-8 py-6 text-lg"
+                    >
+                      Pizza Inteira
+                    </Button>
+                    <Button
+                      onClick={() => setPizzaType('half')}
+                      className="bg-dinapoli-green hover:bg-dinapoli-green/90 text-white px-8 py-6 text-lg"
+                    >
+                      Pizza Meio a Meio
+                    </Button>
+                  </div>
+                </div>
+              ) : pizzaType === 'whole' ? (
+                <div>
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-xl font-bold text-dinapoli-green">Pizza Inteira</h3>
+                    <Button
+                      variant="outline"
+                      onClick={() => setPizzaType(null)}
+                      className="border-gray-700 text-gray-300 hover:bg-gray-900 hover:text-white"
+                    >
+                      Voltar
+                    </Button>
+                  </div>
+                  {renderMenuItems(pizzas, 'pizza', 'bg-dinapoli-green hover:bg-dinapoli-green/80')}
+                </div>
+              ) : (
+                <div>
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-xl font-bold text-dinapoli-green">Pizza Meio a Meio</h3>
+                    <Button
+                      variant="outline"
+                      onClick={() => setPizzaType(null)}
+                      className="border-gray-700 text-gray-300 hover:bg-gray-900 hover:text-white"
+                    </Button>
+                  </div>
+                  <PizzaSelector />
+                </div>
+              )}
             </Card>
           </TabsContent>
           
