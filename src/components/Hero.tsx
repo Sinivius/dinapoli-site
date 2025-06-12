@@ -47,7 +47,7 @@ const Hero = () => {
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-black p-1 bg-gradient-to-r from-dinapoli-green via-dinapoli-white to-dinapoli-red animate-float">
                 <div className="w-full h-full rounded-full overflow-hidden bg-black flex items-center justify-center p-4">
                   <img
-                    src="/lovable-uploads/fa1111b9-d9ee-4aa8-a830-782d732a3cf6.png"
+                    src="https://imgur.com/354nojJ"
                     alt="Dinapoli Logo"
                     className={`w-full h-auto transition-opacity duration-500 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
                     onLoad={() => setIsImageLoaded(true)}
