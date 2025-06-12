@@ -32,14 +32,8 @@ const Cart = () => {
       return;
     }
     
-    // Close the drawer
-    setIsOpen(false);
-    
-    // Scroll to order section
-    const orderSection = document.getElementById('order');
-    if (orderSection) {
-      orderSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Switch to checkout step instead of closing drawer
+    setCurrentStep('checkout');
   };
 
   const handleBackToCart = () => {

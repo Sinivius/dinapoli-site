@@ -13,12 +13,14 @@ const Combos = () => {
     {
       id: 1,
       title: '15 Esfihas + Refrigerante',
+      description: '5 Carne, 5 Queijo, 5 Calabresa',
       price: '47',
       bgColor: 'bg-gradient-to-br from-dinapoli-red to-dinapoli-red/70'
     },
     {
       id: 2,
       title: '20 Esfihas + Refrigerante',
+      description: '5 Carne, 5 Queijo, 5 Calabresa, 5 Requeijão',
       price: '60',
       bgColor: 'bg-gradient-to-br from-dinapoli-yellow to-dinapoli-yellow/70',
       featured: true
@@ -26,6 +28,7 @@ const Combos = () => {
     {
       id: 3,
       title: '30 Esfihas + Refrigerante',
+      description: '10 Carne, 10 Queijo, 10 Calabresa',
       price: '90',
       bgColor: 'bg-gradient-to-br from-dinapoli-green to-dinapoli-green/70'
     }
@@ -69,7 +72,11 @@ const Combos = () => {
                 )}
                 
                 <div className="p-6 text-center">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6">{combo.title}</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3">{combo.title}</h3>
+                  
+                  <p className="text-sm md:text-base mb-6 opacity-90">
+                    {combo.description}
+                  </p>
                   
                   <div className="mb-6">
                     <div className="flex items-center justify-center">
